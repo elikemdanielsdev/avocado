@@ -4,6 +4,7 @@ import { POSTS_QUERY, POST_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   const posts = await client.fetch(POSTS_QUERY);
@@ -26,7 +27,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
       {post?.mainImage ? (
-        <img
+        <Image
           className="w-full aspect-800/300"
           src={urlFor(post.mainImage)
             .width(800)
