@@ -9,14 +9,14 @@ export const components: PortableTextComponents = {
         <Image
           className="rounded-lg not-prose w-full h-auto"
           src={urlFor(props.value)
-            .width(600)
-            .height(400)
-            .quality(80)
+            .width(1200)
+            .height(800)
+            .quality(100)
             .auto("format")
             .url()}
           alt={props?.value?.alt || ""}
-          width="600"
-          height="400"
+          width="1200"
+          height="800"
         />
       ) : null,
   },
